@@ -34,7 +34,7 @@ function App() {
             setBubblePseudo={setBubblePseudo}
         />
 
-        <div className="pb-24 min-h-screen bg-[#2B303B] flex justify-center items-center bg-blend-multiply bg-fixed bg-[url('./public/img/bg.png')]">
+        <div className="pb-24 min-h-screen bg-[#2B303B] flex justify-center items-center bg-blend-multiply bg-fixed bg-[url('./img/bg.png')]">
             <Visualization
                 array={array}
                 setArray={setArray}
