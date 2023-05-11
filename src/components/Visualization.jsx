@@ -15,7 +15,7 @@ export default function Visualization(props) {
     }, [props.array])
 
     return (
-        <div className="w-[65%] my-12 mr-4 ml-12 rounded-sm">
+        <div className="w-[90%] sm:w-[80%] lg:w-[65%] sm:my-12 mr-4 ml-6 xl:ml-12 rounded-sm">
             <div className="rounded-sm border-b-2 border-white h-[29rem] w-full px-4 py-2">
                 <div className="pb-[2rem] w-full h-full grid grid-cols-[repeat(20,_minmax(0,_1fr))] items-end justify-items-center">
                     {arrayBars}

@@ -34,7 +34,7 @@ function App() {
             setBubblePseudo={setBubblePseudo}
         />
 
-        <div className="pb-24 min-h-screen bg-[#2B303B] flex justify-center items-center bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
+        <div className="pb-24 min-h-screen bg-[#2B303B] hidden lg:flex justify-center items-center bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
             <Visualization
                 array={array}
                 setArray={setArray}
@@ -42,6 +42,17 @@ function App() {
             <PseudoCodeBlock
                 algorithm={algorithm}
                 bubblePseudo={bubblePseudo}
+            />
+        </div>
+
+        <div className="pb-24 min-h-screen bg-[#2B303B] flex flex-col lg:hidden justify-center items-center bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
+            <PseudoCodeBlock
+                algorithm={algorithm}
+                bubblePseudo={bubblePseudo}
+            />
+            <Visualization
+                array={array}
+                setArray={setArray}
             />
         </div>
 

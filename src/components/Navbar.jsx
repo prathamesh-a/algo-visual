@@ -29,11 +29,20 @@ export default function Navbar(props) {
     }
 
     return (
-        <div className={`flex bg-[#1A1D23] justify-center py-4 text-lg border-b-2 border-black`}>
-            <Dropdown tip={'Select an algorithm to visualize.'} running={isRunning} options={algorithms} setOption={props.setAlgorithm} defaultOption={props.algorithm}/>
-            <Dropdown tip={'Select the speed of the animation.'} running={isRunning} options={speedTypes} setOption={props.setSpeed} defaultOption={props.speed}/>
-            <button onClick={randomiseArray} className={`rounded-sm border-2 px-4 mr-8 ${runningClasses}`}>Randomise Array</button>
-            <button onClick={visualize} className={`rounded-sm border-2 px-4 mr-8 ${runningClasses}`}>Visualize</button>
-        </div>
+        <>
+            <div className={`hidden sm:flex bg-[#1A1D23] justify-center py-2 xl:py-4 text-md xl:text-lg border-b-2 border-black`}>
+                <Dropdown tip={'Select an algorithm to visualize.'} running={isRunning} options={algorithms} setOption={props.setAlgorithm} defaultOption={props.algorithm}/>
+                <Dropdown tip={'Select the speed of the animation.'} running={isRunning} options={speedTypes} setOption={props.setSpeed} defaultOption={props.speed}/>
+                <button onClick={randomiseArray} className={`rounded-sm border-2 px-4 mr-3 lg:mr-8 ${runningClasses}`}>Randomise Array</button>
+                <button onClick={visualize} className={`rounded-sm border-2 px-4 ${runningClasses}`}>Visualize</button>
+            </div>
+            <div className={`sm:hidden p-4 gap-x-2 gap-y-2 grid grid-cols-2 bg-[#1A1D23] py-2 text-md border-b-2 border-black`}>
+                <Dropdown tip={'Select an algorithm to visualize.'} running={isRunning} options={algorithms} setOption={props.setAlgorithm} defaultOption={props.algorithm}/>
+                <Dropdown tip={'Select the speed of the animation.'} running={isRunning} options={speedTypes} setOption={props.setSpeed} defaultOption={props.speed}/>
+                <button onClick={randomiseArray} className={`rounded-sm border-2 px-1 ${runningClasses}`}>Randomise Array</button>
+                <button onClick={visualize} className={`rounded-sm border-2 px-1 ${runningClasses}`}>Visualize</button>
+            </div>
+        </>
+
     )
 }

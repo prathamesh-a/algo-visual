@@ -12,13 +12,13 @@ export async function visualizer(algorithm, array, speed, setArray, bubblePseudo
     let timer
     switch (speed) {
         case algoSpeed.slow:
-            timer = 500
+            timer = 300
             break
         case algoSpeed.normal:
-            timer = 250
+            timer = 150
             break
         case algoSpeed.fast:
-            timer = 100
+            timer = 50
             break
     }
 
@@ -53,7 +53,6 @@ export async function visualizer(algorithm, array, speed, setArray, bubblePseudo
                 setBubblePseudo([0,0,0,1,0,0,0])
                 await addDelay(timer)
                 changeColor(left, right, array, 'ok', setArray)
-                //setBubblePseudo([0,0,1,0,0,0,0])
                 await addDelay(timer)
                 setBubblePseudo([0,0,1,0,0,0,0])
             }
