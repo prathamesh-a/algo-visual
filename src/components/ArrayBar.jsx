@@ -27,7 +27,7 @@ export default function ArrayBar(props) {
         <Tippy content={props.value} theme={"translucent"}>
             <div className={`${color} w-[60%] rounded-t-sm`} style={{ height: `${height}rem` }}>
                 <div className="flex justify-center h-full items-end">
-                    <p className="text-xs sm:text-sm lg:text-md text-white -mb-[2rem]">{props.value}</p>
+                    <p className="text-[10px] sm:text-sm lg:text-md text-white -mb-[2rem]">{props.value}</p>
                 </div>
             </div>
         </Tippy>
