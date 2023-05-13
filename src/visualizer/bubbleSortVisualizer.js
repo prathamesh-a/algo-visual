@@ -21,23 +21,29 @@ export async function bubbleSortVisualizer(array, setArray, setBubblePseudo, tim
         const swap = animations[i][2]
 
         if (swap) {
-            changeColor(left, right, array, 'selected', setArray)
-            setBubblePseudo([0,0,0,1,0,0,0])
+            changeColor(left, right, array, 'none-up', setArray)
+            setBubblePseudo([0, 0, 1, 0, 0, 0, 0])
             await addDelay(timer)
-            changeColor(left, right, array, 'swap', setArray)
-            setBubblePseudo([0,0,0,0,1,0,0])
+            changeColor(left, right, array, 'up-red', setArray)
+            setBubblePseudo([0, 0, 0, 1, 0, 0, 0])
             await addDelay(timer)
-            setBubblePseudo([0,0,0,0,0,1,0])
             swapBars(left, right, array, setArray)
+            setBubblePseudo([0, 0, 0, 0, 1, 0, 0])
             await addDelay(timer)
-            setBubblePseudo([0,0,1,0,0,0,0])
+            changeColor(left, right, array, 'red', setArray)
+            setBubblePseudo([0, 0, 0, 0, 0, 1, 0])
+            await addDelay(timer)
+            changeColor(left, right, array, 'none', setArray)
         } else {
-            changeColor(left, right, array, 'selected', setArray)
-            setBubblePseudo([0,0,0,1,0,0,0])
+            changeColor(left, right, array, 'none-up', setArray)
+            setBubblePseudo([0, 0, 1, 0, 0, 0, 0])
             await addDelay(timer)
-            changeColor(left, right, array, 'ok', setArray)
+            changeColor(left, right, array, 'up-green', setArray)
+            setBubblePseudo([0, 0, 0, 1, 0, 0, 0])
             await addDelay(timer)
-            setBubblePseudo([0,0,1,0,0,0,0])
+            changeColor(left, right, array, 'green', setArray)
+            await addDelay(timer)
+            changeColor(left, right, array, 'none', setArray)
         }
 
         if (right === tempArr.length-1) {

@@ -8,15 +8,24 @@ export default function ArrayBar(props) {
     let color
     switch (props.color) {
         case 'none':
-            color = 'bg-zinc-400'
+            color = 'bg-zinc-400 transition ease-in-out hover:bg-zinc-300 duration-300'
             break
-        case 'selected':
-            color = "bg-yellow-500"
+        case 'none-up':
+            color = 'bg-zinc-400 -translate-y-5'
             break
-        case 'swap':
+        case 'sorted':
+            color = "bg-indigo-400 transition ease-in-out hover:bg-indigo-300 duration-300"
+            break
+        case 'up-red':
+            color = 'bg-red-500 -translate-y-5'
+            break
+        case 'up-green':
+            color = 'bg-emerald-400 -translate-y-5'
+            break
+        case 'red':
             color = 'bg-red-500'
             break
-        case 'ok':
+        case 'green':
             color = 'bg-emerald-400'
             break
     }

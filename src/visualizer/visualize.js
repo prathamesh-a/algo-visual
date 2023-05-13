@@ -10,13 +10,13 @@ export async function visualizer(algorithm, array, speed, setArray, bubblePseudo
     let timer
     switch (speed) {
         case algoSpeed.slow:
-            timer = 300
+            timer = 250
             break
         case algoSpeed.normal:
-            timer = 150
+            timer = 100
             break
         case algoSpeed.fast:
-            timer = 50
+            timer = 25
             break
     }
 
@@ -34,7 +34,7 @@ async function setDone(array, setArray, setIsRunning) {
         for (let i = 0; i < array.length; i++) {
             setTimeout(() => {
                 const tempArr = [...array]
-                tempArr[i].color = 'ok'
+                tempArr[i].color = 'sorted'
                 setArray(tempArr)
             }, i * 100)
         }

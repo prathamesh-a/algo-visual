@@ -41,6 +41,5 @@ export default function Navbar(props) {
                 <button onClick={visualize} className={`rounded-sm border-2 px-1 ${runningClasses}`}>Visualize</button>
             </div>
         </>
-
     )
 }
