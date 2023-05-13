@@ -17,6 +17,7 @@ function App() {
 
     const [bubblePseudo, setBubblePseudo] = useState([0,0,0,0,0,0,0])
     const [algorithm, setAlgorithm] = useState(algoTypes.none)
+    const [isRunning, setIsRunning] = useState(false)
     const [speed, setSpeed] = useState(algoSpeed.normal)
     const [array, setArray] = useState([])
 
@@ -32,6 +33,8 @@ function App() {
             setArray={setArray}
             bubblePseudo={bubblePseudo}
             setBubblePseudo={setBubblePseudo}
+            isRunning={isRunning}
+            setIsRunning={setIsRunning}
         />
 
         <div className="pb-24 min-h-screen bg-[#2B303B] hidden lg:flex justify-center items-center bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
@@ -42,6 +45,9 @@ function App() {
             <PseudoCodeBlock
                 algorithm={algorithm}
                 bubblePseudo={bubblePseudo}
+                isRunning={isRunning}
+                setIsRunning={setIsRunning}
+                setArray={setArray}
             />
         </div>
 
@@ -49,6 +55,9 @@ function App() {
             <PseudoCodeBlock
                 algorithm={algorithm}
                 bubblePseudo={bubblePseudo}
+                isRunning={isRunning}
+                setIsRunning={setIsRunning}
+                setArray={setArray}
             />
             <Visualization
                 array={array}

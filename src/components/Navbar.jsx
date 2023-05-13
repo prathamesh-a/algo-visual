@@ -1,5 +1,3 @@
-import {useState} from "react";
-
 import Dropdown from "./Dropdown.jsx";
 
 import {alert, getRandomiseArray} from "../util/util.js";
@@ -9,7 +7,7 @@ import {visualizer} from "../visualizer/visualize.js";
 
 export default function Navbar(props) {
 
-    const [isRunning, setIsRunning] = useState(false)
+    const { isRunning, setIsRunning } = props
     const algorithms = [algoTypes.bubbleSort, algoTypes.mergeSort, algoTypes.insertSort];
     const speedTypes = [algoSpeed.slow, algoSpeed.normal, algoSpeed.fast]
     const runningClasses = isRunning ? 'text-zinc-600 cursor-not-allowed border-zinc-600' : 'border-gray-300 text-white hover:text-cyan-300'
