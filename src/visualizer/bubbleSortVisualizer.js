@@ -5,7 +5,7 @@ import {addDelay, changeColor, manageStop, swapBars} from "../util/util.js";
 export async function bubbleSortVisualizer(array, setArray, setBubblePseudo, timer) {
     const temp = [...array]
     const animations = bubbleSort(temp)
-    setBubblePseudo([1,0,0,0,0,0,0])
+    setBubblePseudo([1,0,0,0,0,0,0,0])
 
     for(let i=0; i<animations.length; i++) {
         if (manageStop()) break
@@ -21,33 +21,33 @@ export async function bubbleSortVisualizer(array, setArray, setBubblePseudo, tim
         const swap = animations[i][2]
 
         if (swap) {
-            changeColor(left, right, array, 'none-up', setArray)
-            setBubblePseudo([0, 0, 1, 0, 0, 0, 0])
+            changeColor(left, 'none-up', right, 'none-up', array, setArray)
+            setBubblePseudo([0, 0, 1, 0, 0, 0, 0, 0])
             await addDelay(timer)
-            changeColor(left, right, array, 'up-red', setArray)
-            setBubblePseudo([0, 0, 0, 1, 0, 0, 0])
+            changeColor(left, 'up-red', right, 'up-red', array, setArray)
+            setBubblePseudo([0, 0, 0, 1, 0, 0, 0, 0])
             await addDelay(timer)
             swapBars(left, right, array, setArray)
-            setBubblePseudo([0, 0, 0, 0, 1, 0, 0])
+            setBubblePseudo([0, 0, 0, 0, 1, 0, 0, 0])
             await addDelay(timer)
-            changeColor(left, right, array, 'red', setArray)
-            setBubblePseudo([0, 0, 0, 0, 0, 1, 0])
+            changeColor(left, 'red', right, 'red', array, setArray)
+            setBubblePseudo([0, 0, 0, 0, 0, 1, 0, 0])
             await addDelay(timer)
-            changeColor(left, right, array, 'none', setArray)
+            changeColor(left, 'none', right, 'none', array, setArray)
         } else {
-            changeColor(left, right, array, 'none-up', setArray)
-            setBubblePseudo([0, 0, 1, 0, 0, 0, 0])
+            changeColor(left, 'none-up', right, 'none-up', array, setArray)
+            setBubblePseudo([0, 0, 1, 0, 0, 0, 0, 0])
             await addDelay(timer)
-            changeColor(left, right, array, 'up-green', setArray)
-            setBubblePseudo([0, 0, 0, 1, 0, 0, 0])
+            changeColor(left, 'up-green', right, 'up-green', array, setArray)
+            setBubblePseudo([0, 0, 0, 1, 0, 0, 0, 0])
             await addDelay(timer)
-            changeColor(left, right, array, 'green', setArray)
+            changeColor(left, 'green', right, 'green', array, setArray)
             await addDelay(timer)
-            changeColor(left, right, array, 'none', setArray)
+            changeColor(left, 'none', right, 'none', array, setArray)
         }
 
         if (right === tempArr.length-1) {
-            setBubblePseudo([0, 1, 0, 0, 0, 0, 0])
+            setBubblePseudo([0, 1, 0, 0, 0, 0, 0, 0])
             await addDelay(timer)
         }
 

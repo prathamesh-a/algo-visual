@@ -1,14 +1,21 @@
 import PseudoCodeLine from "./PseudoCodeLine.jsx";
-import {algoTypes, bubbleSortPseudocode} from "../util/config.js";
+import {algoTypes, bubbleSortPseudocode, insertionSortPseudocode} from "../util/config.js";
 import {manageStop} from "../util/util.js";
 
 
 export default function PseudoCodeBlock(props) {
 
-    function getBubblePseudoCode() {
+    function getPseudoCode() {
         const codeArr = []
-        for(let i=0; i<props.bubblePseudo.length; i++) {
-            codeArr.push(<PseudoCodeLine key={Math.random()} text={bubbleSortPseudocode[i]} active={props.bubblePseudo[i] === 1}/>)
+        if (props.algorithm === algoTypes.bubbleSort) {
+            for(let i=0; i<bubbleSortPseudocode.length; i++) {
+                codeArr.push(<PseudoCodeLine key={Math.random()} text={bubbleSortPseudocode[i]} active={props.pseudo[i] === 1}/>)
+            }
+        }
+        else if (props.algorithm === algoTypes.insertSort) {
+            for(let i=0; i<insertionSortPseudocode.length; i++) {
+                codeArr.push(<PseudoCodeLine key={Math.random()} text={insertionSortPseudocode[i]} active={props.pseudo[i] === 1}/>)
+            }
         }
         return codeArr
     }
@@ -27,8 +34,8 @@ export default function PseudoCodeBlock(props) {
             {(props.algorithm !== algoTypes.none && props.isRunning) && <div className='text-[12px] sm:text-sm xl:text-lg'>
                 <button onClick={reset} className="px-4 border-2 rounded-sm border-red-600 text-white hover:text-rose-500 mb-2">STOP</button>
             </div>}
-            {props.algorithm === algoTypes.bubbleSort && <div className="font-mono text-[12px] sm:text-sm xl:text-lg px-2 py-2 lg:py-6 xl:py-12 bg-white/10 backdrop-blur-sm rounded-sm">
-                {getBubblePseudoCode()}
+            {props.algorithm !== algoTypes.none && <div className="font-mono text-[12px] sm:text-sm xl:text-lg px-2 py-2 lg:py-6 xl:py-12 bg-white/10 backdrop-blur-sm rounded-sm">
+                {getPseudoCode()}
             </div>}
         </div>
     )

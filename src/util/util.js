@@ -51,10 +51,10 @@ export function success(string) {
     });
 }
 
-export function changeColor(left, right, array, color, setArray) {
+export function changeColor(left, leftColor, right, rightColor, array, setArray) {
     const tempArr = [...array]
-    tempArr[left].color = color
-    tempArr[right].color = color
+    tempArr[left].color = leftColor
+    tempArr[right].color = rightColor
     setArray(tempArr)
 }
 

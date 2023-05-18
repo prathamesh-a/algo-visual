@@ -1,16 +1,17 @@
 import {algoSpeed, algoTypes} from "../util/config.js";
 import {manageStop, success} from "../util/util.js";
 import {bubbleSortVisualizer} from "./bubbleSortVisualizer.js";
+import {insertionSortVisualizer} from "./insertionSortVisualizer.js";
 
 
-export async function visualizer(algorithm, array, speed, setArray, bubblePseudo, setBubblePseudo, setIsRunning) {
+export async function visualizer(algorithm, array, speed, setArray, pseudo, setPseudo, setIsRunning) {
     let resultArr
     setIsRunning(true)
 
     let timer
     switch (speed) {
         case algoSpeed.slow:
-            timer = 250
+            timer = 1000
             break
         case algoSpeed.normal:
             timer = 100
@@ -21,10 +22,14 @@ export async function visualizer(algorithm, array, speed, setArray, bubblePseudo
     }
 
     if (algorithm === algoTypes.bubbleSort) {
-        resultArr = await bubbleSortVisualizer(array, setArray, setBubblePseudo, timer)
+        resultArr = await bubbleSortVisualizer(array, setArray, setPseudo, timer)
+
+    }
+    else if (algorithm === algoTypes.insertSort) {
+        resultArr = await insertionSortVisualizer(array, setArray, setPseudo, timer)
     }
 
-    setBubblePseudo([0,0,0,0,0,0,0])
+    setPseudo([0,0,0,0,0,0,0])
     await setDone(resultArr, setArray, setIsRunning)
     manageStop(false)
 }
@@ -36,7 +41,7 @@ async function setDone(array, setArray, setIsRunning) {
                 const tempArr = [...array]
                 tempArr[i].color = 'sorted'
                 setArray(tempArr)
-            }, i * 100)
+            }, i * 50)
         }
     }
     else {

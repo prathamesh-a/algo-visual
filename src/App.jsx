@@ -15,7 +15,8 @@ import './index.css'
 
 function App() {
 
-    const [bubblePseudo, setBubblePseudo] = useState([0,0,0,0,0,0,0])
+    // const [bubblePseudo, setBubblePseudo] = useState([0,0,0,0,0,0,0])
+    const [pseudo, setPseudo] = useState([0,0,0,0,0,0,0,0])
     const [algorithm, setAlgorithm] = useState(algoTypes.none)
     const [isRunning, setIsRunning] = useState(false)
     const [speed, setSpeed] = useState(algoSpeed.normal)
@@ -31,8 +32,8 @@ function App() {
             setSpeed={setSpeed}
             array={array}
             setArray={setArray}
-            bubblePseudo={bubblePseudo}
-            setBubblePseudo={setBubblePseudo}
+            pseudo={pseudo}
+            setPseudo={setPseudo}
             isRunning={isRunning}
             setIsRunning={setIsRunning}
         />
@@ -44,7 +45,7 @@ function App() {
             />
             <PseudoCodeBlock
                 algorithm={algorithm}
-                bubblePseudo={bubblePseudo}
+                pseudo={pseudo}
                 isRunning={isRunning}
                 setIsRunning={setIsRunning}
                 setArray={setArray}
@@ -54,7 +55,7 @@ function App() {
         <div className="pb-24 min-h-screen bg-[#2B303B] flex flex-col lg:hidden justify-center items-center bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
             <PseudoCodeBlock
                 algorithm={algorithm}
-                bubblePseudo={bubblePseudo}
+                pseudo={pseudo}
                 isRunning={isRunning}
                 setIsRunning={setIsRunning}
                 setArray={setArray}

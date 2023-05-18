@@ -22,7 +22,7 @@ export default function Navbar(props) {
     function visualize() {
         if (!isRunning) {
             if (props.algorithm === algoTypes.none) alert("Select an Algorithm.")
-            else visualizer(props.algorithm, props.array, props.speed, props.setArray, props.bubblePseudo, props.setBubblePseudo, setIsRunning)
+            else visualizer(props.algorithm, props.array, props.speed, props.setArray, props.pseudo, props.setPseudo, setIsRunning)
         }
     }
 

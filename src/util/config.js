@@ -20,3 +20,14 @@ export const bubbleSortPseudocode = [
     'ㅤㅤㅤㅤswapped = true',
     'While swapped = true'
 ]
+
+export const insertionSortPseudocode = [
+    'for element i=1 to (array length - 1)',
+    'ㅤㅤkey = arr[i]',
+    'ㅤㅤj = i - 1',
+    'ㅤㅤwhile j >= 0 and arr[j] > key',
+    'ㅤㅤㅤㅤswap arr[j+1] with arr[i]',
+    'ㅤㅤㅤㅤj = j - 1',
+    'ㅤㅤend while',
+    'end for'
+]
