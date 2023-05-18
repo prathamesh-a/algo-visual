@@ -11,11 +11,11 @@ import {ToastContainer} from "react-toastify";
 
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css'
+import Scroller from "./components/Scroller.jsx";
 
 
 function App() {
 
-    // const [bubblePseudo, setBubblePseudo] = useState([0,0,0,0,0,0,0])
     const [pseudo, setPseudo] = useState([0,0,0,0,0,0,0,0])
     const [algorithm, setAlgorithm] = useState(algoTypes.none)
     const [isRunning, setIsRunning] = useState(false)
@@ -38,33 +38,42 @@ function App() {
             setIsRunning={setIsRunning}
         />
 
-        <div className="pb-24 min-h-screen bg-[#2B303B] hidden lg:flex justify-center items-center bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
-            <Visualization
-                array={array}
-                setArray={setArray}
-            />
-            <PseudoCodeBlock
-                algorithm={algorithm}
-                pseudo={pseudo}
-                isRunning={isRunning}
-                setIsRunning={setIsRunning}
-                setArray={setArray}
-            />
+        <div className="bg-[#2B303B] bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
+            <div className="pb-24 min-h-screen bg-[#2B303B] hidden lg:flex justify-center items-center bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
+                <Visualization
+                    array={array}
+                    setArray={setArray}
+                />
+                <PseudoCodeBlock
+                    algorithm={algorithm}
+                    pseudo={pseudo}
+                    isRunning={isRunning}
+                    setIsRunning={setIsRunning}
+                    setArray={setArray}
+                />
+            </div>
+            <div className="hidden lg:block"><Scroller algorithm={algorithm}/></div>
+
         </div>
 
-        <div className="pb-24 min-h-screen bg-[#2B303B] flex flex-col lg:hidden justify-center items-center bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
-            <PseudoCodeBlock
-                algorithm={algorithm}
-                pseudo={pseudo}
-                isRunning={isRunning}
-                setIsRunning={setIsRunning}
-                setArray={setArray}
-            />
-            <Visualization
-                array={array}
-                setArray={setArray}
-            />
+        <div className="bg-[#2B303B] bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
+            <div className="pb-24 min-h-screen bg-[#2B303B] flex flex-col lg:hidden justify-center items-center bg-blend-multiply bg-fixed bg-[url('/assets/bg.png')]">
+                <PseudoCodeBlock
+                    algorithm={algorithm}
+                    pseudo={pseudo}
+                    isRunning={isRunning}
+                    setIsRunning={setIsRunning}
+                    setArray={setArray}
+                />
+                <Visualization
+                    array={array}
+                    setArray={setArray}
+                />
+            </div>
+            <div className="block lg:hidden"><Scroller algorithm={algorithm}/></div>
         </div>
+
+
 
         <AlgoInfo algorithm={algorithm}/>
         <Footer/>

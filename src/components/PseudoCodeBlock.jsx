@@ -35,6 +35,7 @@ export default function PseudoCodeBlock(props) {
                 <button onClick={reset} className="px-4 border-2 rounded-sm border-red-600 text-white hover:text-rose-500 mb-2">STOP</button>
             </div>}
             {props.algorithm !== algoTypes.none && <div className="font-mono text-[12px] sm:text-sm xl:text-lg px-2 py-2 lg:py-6 xl:py-12 bg-white/10 backdrop-blur-sm rounded-sm">
+                <p className="mb-3 text-white">{props.algorithm} Pseudocode</p>
                 {getPseudoCode()}
             </div>}
         </div>
