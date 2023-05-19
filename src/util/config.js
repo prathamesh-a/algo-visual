@@ -2,7 +2,7 @@ export const algoTypes = {
     none: "Algorithm",
     bubbleSort: "Bubble Sort",
     insertSort: "Insertion Sort",
-    mergeSort: "Merge Sort"
+    selectionSort: "Selection Sort"
 }
 
 export const algoSpeed = {

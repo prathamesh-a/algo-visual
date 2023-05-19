@@ -8,7 +8,7 @@ import {visualizer} from "../visualizer/visualize.js";
 export default function Navbar(props) {
 
     const { isRunning, setIsRunning } = props
-    const algorithms = [algoTypes.bubbleSort, algoTypes.mergeSort, algoTypes.insertSort];
+    const algorithms = [algoTypes.bubbleSort, algoTypes.selectionSort, algoTypes.insertSort];
     const speedTypes = [algoSpeed.slow, algoSpeed.normal, algoSpeed.fast]
     const runningClasses = isRunning ? 'text-zinc-600 cursor-not-allowed border-zinc-600' : 'border-gray-300 text-white hover:text-cyan-300'
 

@@ -1,4 +1,3 @@
-import "/src/static/scoller.css"
 import {algoTypes} from "../util/config.js";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
