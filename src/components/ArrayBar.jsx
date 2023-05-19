@@ -7,6 +7,9 @@ import 'tippy.js/themes/translucent.css';
 export default function ArrayBar(props) {
     let color
     switch (props.color) {
+        case 'yellow':
+            color = 'bg-yellow-400 transition ease-in-out hover:bg-zinc-300 duration-300'
+            break
         case 'none':
             color = 'bg-zinc-400 transition ease-in-out hover:bg-zinc-300 duration-300'
             break

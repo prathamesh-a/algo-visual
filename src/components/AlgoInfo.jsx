@@ -34,6 +34,23 @@ export default function AlgoInfo(props) {
         'end insertionSort'
     ]
 
+    const selectionPseudocode = [
+        'selectionSort(A)',
+        'ㅤㅤn = length(A)',
+        'ㅤㅤfor i = 0 to n-1 do',
+        'ㅤㅤㅤㅤminIndex = i',
+        'ㅤㅤㅤㅤfor j = i+1 to n do',
+        'ㅤㅤㅤㅤㅤㅤif A[j] < A[minIndex] then',
+        'ㅤㅤㅤㅤㅤㅤㅤㅤminIndex = j',
+        'ㅤㅤㅤㅤㅤㅤend if',
+        'ㅤㅤㅤㅤend for',
+        'ㅤㅤㅤㅤif minIndex != i then',
+        'ㅤㅤㅤㅤㅤㅤswap(A[i], A[minIndex])',
+        'ㅤㅤㅤㅤend if',
+        'ㅤㅤend for',
+        'end selectionSort'
+    ]
+
     return (
         <div className=" bg-[#23272F] border-t-2 border-black">
             {props.algorithm === algoTypes.bubbleSort && <div className="px-8 sm:px-12 lg:px-24 py-12">
@@ -64,6 +81,21 @@ export default function AlgoInfo(props) {
                 <p className="text-md xl:text-xl mt-6 text-zinc-300">In the pseudocode, A is an array of elements to be sorted. The insertionSort function iterates through the list, starting from the second element (index 1). It picks an element (key) and compares it with the elements on its left, shifting them one position to the right until finding the correct position for the key element. This process is repeated for each element in the list until the entire list is sorted.</p>
                 <p className="text-md xl:text-xl mt-6 text-zinc-300 font-semibold">Time Complexity: O(N^2)</p>
                 <p className="text-md xl:text-xl mt-6 text-zinc-300">The time complexity of insertion sort is also O(n^2), which makes it inefficient for large lists. However, it performs better than bubble sort in most cases because it tends to have fewer comparisons and swaps. Insertion sort is a stable sorting algorithm and can be useful for small or partially sorted lists.</p>
+            </div>}
+
+            {props.algorithm === algoTypes.selectionSort && <div className="px-8 sm:px-12 lg:px-24 py-12">
+                <p className="text-[25px] xl:text-[30px] text-cyan-300">Selection Sort Algorithm</p>
+                <p className="text-md xl:text-xl mt-6 text-zinc-300">Selection Sort is a simple comparison-based sorting algorithm that divides the input array into two parts: the sorted portion at the beginning and the unsorted portion at the end. The algorithm repeatedly finds the minimum element from the unsorted portion and swaps it with the current element at the start of the unsorted portion. This process is repeated until the entire array is sorted.</p>
+                <p className="text-md xl:text-xl mt-6 text-zinc-300">The algorithm starts with the first element in the array and assumes it as the minimum element. It then iterates through the unsorted portion of the array to find the minimum element. Once the minimum element is found, it swaps it with the current element at the start of the unsorted portion. The algorithm then moves the boundary of the sorted and unsorted portions one position to the right.</p>
+
+                <p className="text-md xl:text-xl mt-6 text-zinc-300">Here's the pseudocode for Selection sort:</p>
+                <div className="my-8 bg-[#1A1D23] pl-4 rounded-sm w-[100%] sm:w-1/2 py-4">
+                    {selectionPseudocode.map(each => <p key={each} className="font-mono text-sm xl:text-lg text-cyan-200">{each}</p>)}
+                </div>
+
+                <p className="text-md xl:text-xl mt-6 text-zinc-300">In the pseudocode, A is an array of elements to be sorted. The selectionSort function iterates through the list, maintaining a sorted portion at the beginning and finding the minimum element from the unsorted portion in each iteration. It then swaps the minimum element with the current element at the start of the unsorted portion. This process is repeated until the entire list is sorted.</p>
+                <p className="text-md xl:text-xl mt-6 text-zinc-300 font-semibold">Time Complexity: O(N^2)</p>
+                <p className="text-md xl:text-xl mt-6 text-zinc-300">The time complexity of selection sort is also O(n^2). Although it has the same time complexity as bubble sort, selection sort generally performs better in practice due to its reduced number of swaps. However, like bubble sort, it is also inefficient for larger lists. Selection sort is primarily used for educational purposes or when the number of elements is small and minimizing the number of swaps is desirable.</p>
             </div>}
         </div>
     )

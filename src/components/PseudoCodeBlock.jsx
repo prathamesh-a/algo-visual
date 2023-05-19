@@ -1,5 +1,5 @@
 import PseudoCodeLine from "./PseudoCodeLine.jsx";
-import {algoTypes, bubbleSortPseudocode, insertionSortPseudocode} from "../util/config.js";
+import {algoTypes, bubbleSortPseudocode, insertionSortPseudocode, selectionSortPseudocode} from "../util/config.js";
 import {manageStop} from "../util/util.js";
 
 
@@ -15,6 +15,11 @@ export default function PseudoCodeBlock(props) {
         else if (props.algorithm === algoTypes.insertSort) {
             for(let i=0; i<insertionSortPseudocode.length; i++) {
                 codeArr.push(<PseudoCodeLine key={Math.random()} text={insertionSortPseudocode[i]} active={props.pseudo[i] === 1}/>)
+            }
+        }
+        else if (props.algorithm === algoTypes.selectionSort) {
+            for(let i=0; i<selectionSortPseudocode.length; i++) {
+                codeArr.push(<PseudoCodeLine key={Math.random()} text={selectionSortPseudocode[i]} active={props.pseudo[i] === 1}/>)
             }
         }
         return codeArr
